@@ -30,6 +30,12 @@ const filteredProvinces = provinces.filter(province =>!province.includes('Cape')
 // Log the count of remaining provinces
 console.log(`Number of remaining provinces: ${filteredProvinces.length}`);
 
+// Determine if a name contains the letter 'S'
+const containsS = names.map(name => name.toLowerCase().includes('s'));
+
+// Log the boolean array to the console
+console.log(containsS);
+
 // A list of products with prices:
 const products = [
   { product: 'banana', price: "2" },
