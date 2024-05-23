@@ -62,3 +62,10 @@ console.log(products.map(product => product.product));
 
 // Use the `filter` method to create a new array containing only products with names shorter than or equal to 5 characters
 console.log(products.filter(product => product.product.length <= 5));
+
+// Filter out products without prices, convert string prices to numbers, and calculate the total price using `reduce`
+console.log(products
+  .filter(product => product.price!== '' && product.price!== undefined)
+  .map(product => typeof product.price === 'tring'? parseFloat(product.price) : product.price)
+  .reduce((acc, price) => acc + price, 0)
+ );
