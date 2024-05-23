@@ -18,6 +18,12 @@ const uppercaseProvinces = provinces.map(province => province.toUpperCase());
 // Log the new array to the console
 console.log(uppercaseProvinces);
 
+// Sort the provinces alphabetically
+const sortedProvinces = provinces.sort((a, b) => a.localeCompare(b));
+
+// Log the sorted array to the console
+console.log(sortedProvinces);
+
 // A list of products with prices:
 const products = [
   { product: 'banana', price: "2" },
