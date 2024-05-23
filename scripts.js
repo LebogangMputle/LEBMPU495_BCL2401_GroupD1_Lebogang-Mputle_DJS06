@@ -59,3 +59,6 @@ const products = [
 
 // Use the `map` method to create a new array containing only the product names
 console.log(products.map(product => product.product));
+
+// Use the `filter` method to create a new array containing only products with names shorter than or equal to 5 characters
+console.log(products.filter(product => product.product.length <= 5));
