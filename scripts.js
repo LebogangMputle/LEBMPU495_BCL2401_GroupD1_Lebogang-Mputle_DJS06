@@ -24,6 +24,12 @@ const sortedProvinces = provinces.sort((a, b) => a.localeCompare(b));
 // Log the sorted array to the console
 console.log(sortedProvinces);
 
+// Filter out provinces containing "Cape"
+const filteredProvinces = provinces.filter(province =>!province.includes('Cape'));
+
+// Log the count of remaining provinces
+console.log(`Number of remaining provinces: ${filteredProvinces.length}`);
+
 // A list of products with prices:
 const products = [
   { product: 'banana', price: "2" },
