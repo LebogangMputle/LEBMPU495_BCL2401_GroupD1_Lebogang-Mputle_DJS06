@@ -4,6 +4,17 @@ const provinces = ['Western Cape', 'Gauteng', 'Northern Cape', 'Eastern Cape', '
 // A list of names:
 const names = ['Ashwin', 'Sibongile', 'Jan-Hendrik', 'Sifso', 'Shailen', 'Frikkie']
 
+// Initialize an empty object to store the name-province mappings
+const namesToProvinces = names.reduce((acc, name, index) => {
+  // Add a new key-value pair to the accumulator object for each name and its corresponding province
+  acc[name] = provinces[index];
+  // Return the accumulator object for the next iteration
+  return acc;
+}, {});
+
+// Log the resulting object to the console
+console.log(namesToProvinces);
+
 // Log each name and each province to the console
 provinces.forEach(province => console.log(province));
 names.forEach(name => console.log(names));
