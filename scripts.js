@@ -77,3 +77,10 @@ console.log(products
 const prices = products.map(product => parseFloat(product.price));
 console.log(`Highest: ${Math.max(...prices)}. Lowest: ${Math.min(...prices)}`);
 
+// Using `Object.entries` and `reduce`, recreate the products object with keys 'name' and 'cost', maintaining their original values
+const recreatedProducts = Object.entries(products).reduce((acc, [key, value]) => {
+  acc[key] = { name: value.product, cost: parseFloat(value.price) };
+  return acc;
+}, {});
+
+console.log(recreatedProducts);
