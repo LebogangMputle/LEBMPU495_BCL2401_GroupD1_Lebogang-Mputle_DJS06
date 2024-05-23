@@ -56,3 +56,6 @@ const products = [
   { product: 'coffee', price: 10 },
   { product: 'tea', price: '' },
 ]
+
+// Use the `map` method to create a new array containing only the product names
+console.log(products.map(product => product.product));
