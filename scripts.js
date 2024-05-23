@@ -73,3 +73,7 @@ console.log(products
   .reduce((acc, price) => acc + price, 0)
  );
 
+ // Identify the highest and lowest-priced items, returning a string formatted as "Highest: X. Lowest: Y."
+const prices = products.map(product => parseFloat(product.price));
+console.log(`Highest: ${Math.max(...prices)}. Lowest: ${Math.min(...prices)}`);
+
