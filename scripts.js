@@ -13,7 +13,7 @@ const namesToProvinces = names.reduce((acc, name, index) => {
 }, {});
 
 
-// // Log the resulting object to the console
+// Log the resulting object to the console
 console.log(namesToProvinces);
 
 // // Log each name and each province to the console
