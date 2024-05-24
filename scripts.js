@@ -74,11 +74,11 @@ console.log(products
   .reduce((acc, price) => acc + price, 0)
  );
 
- // Identify the highest and lowest-priced items, returning a string formatted as "Highest: X. Lowest: Y."
+ // Identify the highest and lowest-priced items, returning a string formatted as "Highest: X. Lowest: Y." 
 const prices = products.filter((product) => product.price !== '' && product.price !== ' ').map(product => parseFloat(product.price));
 console.log(`Highest: ${Math.max(...prices)}. Lowest: ${Math.min(...prices)}`);
 
-// Using `Object.entries` and `reduce`, recreate the products object with keys 'name' and 'cost', maintaining their original values
+// Using `Object.entries` and `reduce`, recreate the products object with keys 'name' and 'cost', maintaining their original values.
 const recreatedProducts = Object.entries(products).reduce((acc, [key, value]) => {
   acc[key] = { name: value.product, cost: value.price };
   return acc;
