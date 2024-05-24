@@ -21,7 +21,7 @@ provinces.forEach(province => console.log(province));
 names.forEach(name => console.log(name));
 
 // // Log each name with a matching province in the format "Name (Province)"
-const matchingProvinces = provinces.filter((province, index) => names[index]);
+const matchingProvinces = provinces.filter((names, index) => names[index]);
 matchingProvinces.forEach((province, index) => console.log(`${names[index]} (${province})`));
 
 // Create a new array of province names in all uppercase
@@ -43,7 +43,7 @@ const filteredProvinces = provinces.filter(province =>!province.includes('Cape')
 console.log(`Number of remaining provinces: ${filteredProvinces.length}`);
 
 // Determine if a name contains the letter 'S'
-const containsS = names.map(name => name.toLowerCase().includes('s'));
+const containsS = names.map(name => name.includes('S'));
 
 // Log the boolean array to the console
 console.log(containsS);
