@@ -12,14 +12,15 @@ const namesToProvinces = names.reduce((acc, name, index) => {
   return acc;
 }, {});
 
-// Log the resulting object to the console
+
+// // Log the resulting object to the console
 console.log(namesToProvinces);
 
-// Log each name and each province to the console
+// // Log each name and each province to the console
 provinces.forEach(province => console.log(province));
-names.forEach(name => console.log(names));
+names.forEach(name => console.log(name));
 
-// Log each name with a matching province in the format "Name (Province)"
+// // Log each name with a matching province in the format "Name (Province)"
 const matchingProvinces = provinces.filter((province, index) => names[index]);
 matchingProvinces.forEach((province, index) => console.log(`${names[index]} (${province})`));
 
@@ -74,12 +75,13 @@ console.log(products
  );
 
  // Identify the highest and lowest-priced items, returning a string formatted as "Highest: X. Lowest: Y."
-const prices = products.map(product => parseFloat(product.price));
+const prices = products.filter((product) => product.price !== '' && product.price !== ' ').map(product => parseFloat(product.price));
+//console.log(prices)
 console.log(`Highest: ${Math.max(...prices)}. Lowest: ${Math.min(...prices)}`);
 
 // Using `Object.entries` and `reduce`, recreate the products object with keys 'name' and 'cost', maintaining their original values
 const recreatedProducts = Object.entries(products).reduce((acc, [key, value]) => {
-  acc[key] = { name: value.product, cost: parseFloat(value.price) };
+  acc[key] = { name: value.product, cost: value.price };
   return acc;
 }, {});
 
