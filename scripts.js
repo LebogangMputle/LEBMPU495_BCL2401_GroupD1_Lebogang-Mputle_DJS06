@@ -13,7 +13,7 @@ const namesToProvinces = names.reduce((acc, name, index) => {
 }, {});
 
 
-// Log the resulting object to the console
+// // Log the resulting object to the console
 console.log(namesToProvinces);
 
 // // Log each name and each province to the console
@@ -21,7 +21,7 @@ provinces.forEach(province => console.log(province));
 names.forEach(name => console.log(name));
 
 // // Log each name with a matching province in the format "Name (Province)"
-const matchingProvinces = provinces.filter((names, index) => names[index]);
+const matchingProvinces = provinces.filter((province, index) => names[index]);
 matchingProvinces.forEach((province, index) => console.log(`${names[index]} (${province})`));
 
 // Create a new array of province names in all uppercase
@@ -43,7 +43,7 @@ const filteredProvinces = provinces.filter(province =>!province.includes('Cape')
 console.log(`Number of remaining provinces: ${filteredProvinces.length}`);
 
 // Determine if a name contains the letter 'S'
-const containsS = names.map(name => name.includes('S'));
+const containsS = names.map(name => name.toLowerCase().includes('s'));
 
 // Log the boolean array to the console
 console.log(containsS);
@@ -65,7 +65,7 @@ console.log(products.map(product => product.product));
 console.log(products.filter(product => product.product.length <= 5));
 
 // Use `reduce` to concatenate all product names into a single string
-console.log(products.reduce((acc, product) => acc + ' + ' + product.product, ''));
+console.log(products.reduce((acc, product) => acc + product.product, ''));
 
 // Filter out products without prices, convert string prices to numbers, and calculate the total price using `reduce`
 console.log(products
@@ -74,11 +74,12 @@ console.log(products
   .reduce((acc, price) => acc + price, 0)
  );
 
- // Identify the highest and lowest-priced items, returning a string formatted as "Highest: X. Lowest: Y." 
+ // Identify the highest and lowest-priced items, returning a string formatted as "Highest: X. Lowest: Y."
 const prices = products.filter((product) => product.price !== '' && product.price !== ' ').map(product => parseFloat(product.price));
+console.log(prices)
 console.log(`Highest: ${Math.max(...prices)}. Lowest: ${Math.min(...prices)}`);
 
-// Using `Object.entries` and `reduce`, recreate the products object with keys 'name' and 'cost', maintaining their original values.
+// Using `Object.entries` and `reduce`, recreate the products object with keys 'name' and 'cost', maintaining their original values
 const recreatedProducts = Object.entries(products).reduce((acc, [key, value]) => {
   acc[key] = { name: value.product, cost: value.price };
   return acc;
